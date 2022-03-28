@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/pag.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <!-- <section class="main">
+        <div class="slider-box">
+            <div class="container">
+                <div class="header-box">
+                    <header class="header">
+                        <div class="logo-box">
+                            <a class="img-link" href="#">
+                                <img src="./imgs/tv.svg" alt="logo">
+                            </a>
+                            <h2 class="logo-title">MovieBox</h2>
+                        </div>
+                        <div class="search-box">
+                            <input class="search-input" type="text" placeholder="What do you want to watch?">
+                            <button class="search_btn"><i class='bx bx-search-alt-2'></i></button>
+                        </div>
+                        <div class="menu-box">
+                            <a class="sign-link" href="#">Sign in</a>
+                            <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                             <i class='bx bx-menu-alt-right'></i>
+                            </button>
+                        </div>
+                    </header>
+                </div>
+            </div>
+                <div class="colors">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-item active">
+                            <img class="modal-img" src="./imgs/eternals.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Eternals</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="modal-img" src="./imgs/spaderman.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Spiderman</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="modal-img" src="./imgs/superman.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Superman</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="modal-img" src="./imgs/Transformers.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Transformers</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="modal-img" src="./imgs/marvel.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Capitan Marvel</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-control-next btn-box" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <button class="slider-btn">1</button>
+                        <button class="slider-btn">2</button>
+                        <button class="slider-btn">3</button>
+                        <button class="slider-btn">4</button>
+                        <button class="slider-btn">5</button>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="container">
+            <div class="form-box">
+                <form class="form">
+                    <select id="AllCategory" class="all__category">
+                        <option value="All">All</option>
+                    </select>
+                    <input class="searchInput" type="search">
+                    <input class="yearInput" value="1900" type="number">
+                    <input class="yearInput" value="2018" type="number">
+                    <select class="all__category">
+                        <option value="A-Z">A-Z</option>
+                        <option value="A-Z">Z-A</option>
+                        <option value="A-Z">Latest</option>
+                        <option value="A-Z">Earlisest</option>
+                    </select>
+                    <button type="submit" class="search__btn">
+                        Search
+                    </button>
+                </form>
+            </div>
+            <h2>Movies App</h2>
+            <div class="cards-box">
+                <button class="btn__left"><i class='bx bx-chevron-left' ></i></button>
+                <ul class="allMovie">
+                </ul>
+                <button class="btn__right"><i class='bx bx-chevron-right'></i></button>
+            </div>
+            <h2>All movie</h2>
+            <div class="d-flex">
+                <div class="cards__box col-12">
+                    <div class="cards">
+                        <ul id="listCard"></ul>
+                    </div>
+                    <div>
+                        <div class="pagination">
+                            <ul class="pag-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <section class="main">
+        <div class="slider-box">
+            <div class="container">
+                <div class="header-box">
+                    <header class="header">
+                        <div class="logo-box">
+                            <a class="img-link" href="#">
+                                <img src="./imgs/tv.svg" alt="logo">
+                            </a>
+                            <h2 class="logo-title">MovieBox</h2>
+                        </div>
+                        <div class="search-box">
+                            <input class="search-input" type="text" placeholder="What do you want to watch?">
+                            <button class="search_btn"><i class='bx bx-search-alt-2'></i></button>
+                        </div>
+                        <div class="menu-box">
+                            <a class="sign-link" href="#">Sign in</a>
+                            <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                             <i class='bx bx-menu-alt-right'></i>
+                            </button>
+                        </div>
+                    </header>
+                </div>
+            </div>
+                <div class="colors">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-item active">
+                            <img class="modal-img" src="./imgs/eternals.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Eternals</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="modal-img" src="./imgs/spaderman.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Spiderman</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="modal-img" src="./imgs/superman.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Superman</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="modal-img" src="./imgs/Transformers.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Transformers</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="modal-img" src="./imgs/marvel.jpg" class="d-block w-100" alt="poster">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="col-4 hero-desc-box">
+                                    <h2 class="hero-title">Capitan Marvel</h2>
+                                    <p class="hero-text">John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+                                    <button class="d-flex hero-btn">
+                                        <i class='bx bx-play'></i>
+                                        <span class="hero-btn-name">Watch trailer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-control-next btn-box" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <button class="slider-btn">1</button>
+                        <button class="slider-btn">2</button>
+                        <button class="slider-btn">3</button>
+                        <button class="slider-btn">4</button>
+                        <button class="slider-btn">5</button>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="container">
+            <div class="form-box">
+                <form class="form">
+                    <select id="AllCategory" class="all__category">
+                        <option value="All">All</option>
+                    </select>
+                    <input class="searchInput" type="search">
+                    <input class="yearInput" value="1900" type="number">
+                    <input class="yearInput" value="2018" type="number">
+                    <select class="all__category">
+                        <option value="A-Z">A-Z</option>
+                        <option value="A-Z">Z-A</option>
+                        <option value="A-Z">Latest</option>
+                        <option value="A-Z">Earlisest</option>
+                    </select>
+                    <button type="submit" class="search__btn">
+                        Search
+                    </button>
+                </form>
+            </div>
+            <h2>Movies App</h2>
+            <div class="cards-box">
+                <button class="btn__left"><i class='bx bx-chevron-left' ></i></button>
+                <ul class="allMovie">
+                </ul>
+                <button class="btn__right"><i class='bx bx-chevron-right'></i></button>
+            </div>
+            <h2>All movie</h2>
+            <div class="d-flex">
+                <div class="cards__box col-12">
+                    <div class="cards">
+                        <ul id="listCard"></ul>
+                    </div>
+                    <div>
+                        <div class="pagination">
+                            <ul class="pag-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- offcanvas -->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Sevimli kinolarim</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="offcanvas__list">
+                <!-- <li class="cards__item">
+                    <div class="addBtn">
+                        <button class="heart__btn">
+                            <i class='bx bxs-heart'></i>
+                        </button>
+                    </div>
+                    <img src="./imgs/Poster.jpg" alt="movie" width="250" height="370">
+                    <span class="currient">USA, 2016-Current</span>
+                    <h3 class="card__title">Stranger Things</h3>
+                    <div class="star__box d-flex">
+                        <div>
+                            <button class="ModalBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="./imgs/imd.png" alt="imd">
+                            </button>
+                            <span>86.0 / 100</span>
+                        </div>
+                        <div>
+                            <i class='bx bxs-star'></i>
+                            <span>97%</span> 
+                        </div>
+                    </div>
+                    <div class="movie-category">
+                        <span>Action</span>
+                        <span>Adventure</span>
+                        <span class="janr">Horror</span>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+        </div>
+
+  
+  <!-- Modal -->
+    <div class="Modal_box">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                   <div class="d-flex">
+                        <div>
+                            <img src="./imgs/Poster.jpg" alt="poster">
+                        </div>
+                        <div class="modalDesc">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut in reiciendis quam, eligendi possimus quia natus error iste temporibus consectetur distinctio nulla totam nam ea non optio quo, quod deserunt!
+                        </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/normalized-movies.js"></script>
+    <script src="js/pagination.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
