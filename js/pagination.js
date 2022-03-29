@@ -80,10 +80,10 @@ ulTag.addEventListener('click', (e) => {
 })
 
 
-let nextBtn = document.querySelector('#nextBtn');
+// let nextBtn = document.querySelector('#nextBtn');
 
-nextBtn.addEventListener('click', (e) => {
-    page = page + 1
-    paginationFor(page)
-})
+// nextBtn.addEventListener('click', (e) => {
+//     page = page + 1
+//     paginationFor(page)
+// })
 

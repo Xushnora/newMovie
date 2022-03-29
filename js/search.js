@@ -52,6 +52,33 @@ function addSearchForm(e) {
 
         newSearchList.appendChild(li);
 
+    } else if (fCategory == "All" &&
+    movies[i].title.toLowerCase().includes(fInput.toLowerCase()) && 
+    fYearStart <= movies[i].year && fYearEnd >= movies[i].year) {
+        let li = document.createElement('li');
+        li.className = 'downSearchItem'
+    
+        li.innerHTML = 
+        ` <img class = "movi-img" src="${movies[i].youtubePoster}" alt="movie">
+        <div class="addBtn">
+            <button class="heart__btn" onclick ="addHeart('${movies[i].imdbId}')">
+                <i class='bx bxs-heart'></i>
+            </button>
+        </div>
+        <h3 class="card__title searchTitle">${movies[i].title}</h3>
+        <div class="star__box d-flex">
+            <div>
+                <button onclick ="addModal('${movies[i].imdbId}')" class="ModalBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">watch</button>
+            </div>
+            <div>
+                <i class='bx bxs-star'></i>
+                <span>${movies[i].imdbRating}</span> 
+            </div>
+        </div>
+        <div class="movie-category">${movies[i].categories}
+        </div>`
+
+        newSearchList.appendChild(li);
     }
 
 }
@@ -117,9 +144,7 @@ btnSearch.addEventListener('click', (e) => {
             modalBody.appendChild(searchElementList);
     
         }
-    
     }
-
 })
 
 

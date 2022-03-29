@@ -3,8 +3,36 @@ let elModalDesc = document.querySelector('.modalDesc');
 let elModalBody = document.querySelector('.modal-body');
 let elModalName = document.querySelector('.modal-header');
 let elWatchModal = document.querySelector('.offcanvas__list');
+let movieSliderList = document.querySelector('.movieSliderList');
 
 let page = 1;
+
+for(let i = 0; i < 8; i++) {
+    let li = document.createElement('li');
+    li.className = 'slideListCard'
+    li.innerHTML = `
+        <img class = "movi-img" src="${movies[i].youtubePoster}" alt="movie">
+        <div class="addBtn">
+            <button class="heart__btn" onclick ="addHeart('${movies[i].imdbId}')">
+                <i class='bx bxs-heart'></i>
+            </button>
+        </div>
+        <span class="currient">USA, 2016-Current</span>
+        <h3 class="card__title">${movies[i].title}</h3>
+        <div class="star__box d-flex">
+            <div>
+                <button onclick ="addModal('${movies[i].imdbId}')" class="ModalBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">watch</button>
+            </div>
+            <div>
+                <i class='bx bxs-star'></i>
+                <span>${movies[i].imdbRating}</span> 
+            </div>
+        </div>
+        <div class="movie-category">${movies[i].categories}
+        </div>
+    `
+    movieSliderList.appendChild(li);
+}
 
 function render(movies) {
     elList.innerHTML = '';
@@ -45,7 +73,6 @@ let addHeartBtn = document.querySelectorAll('.heart__btn');
 render(movies)
 
 function paginationFor(page) {
-    console.log(page);
     let arrpag = []
 
     for (let i = ((page-1)*32); i<=(page*32); i++){
@@ -61,9 +88,9 @@ addHeartBtn.forEach(addHeartBtn => addHeartBtn.addEventListener('click', (e) => 
 
 let newHeartArr = [];
 
-function addHeart (e) {
+function addHeart (id) {
     for (let i = 0; i <= movies.length; i++) {
-        if (movies[i].imdbId == e) {
+        if (movies[i].imdbId == id) {
             let b = movies[i];
             newHeartArr.push(b);
         }
@@ -101,14 +128,14 @@ function addHeart (e) {
 
 // let elRemoveBtn = document.querySelector('.remove__btn');
 
-// elRemoveBtn.addEventListener('click', (e) => {
-//     console.log(e.target);
-// })
+elRemoveBtn.addEventListener('click', (e) => {
+    console.log(e.target);
+})
 
-function addModal(e) {
-    for(let i = 30; i <= 53; i++) {
-        if (movies[i].imdbId == e) {
-            let a = movies[i];
+function addModal(id) {
+    for(let i = 0; i <= movies.length; i++) {
+        let a = movies[i];
+        if (movies[i].imdbId == id) {
             elModalName.innerHTML = `<h5 class="modal-title" id="exampleModalLabel">${a.title}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
             elModalBody.innerHTML = `
