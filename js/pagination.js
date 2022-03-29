@@ -1,39 +1,11 @@
 const ulTag = document.querySelector('.pag-list');
 const allMovie = document.querySelector('.allMovie');
-// let elList = document.querySelector('#listCard');
+let nextBtnValue = ""
 
-
-let totalPages = 104;
-
-    // for(let i = 0; i < 32; i++) {
-    //     let li = document.createElement('li');
-    //     li.style.position = 'relative';
-    //     li.style.width = '300px';
-    //     li.innerHTML = `
-    //         <img class = "movi-img" src="${movies[i].youtubePoster}" alt="movie">
-    //         <div class="addBtn">
-    //             <button class="heart__btn" onclick ="addHeart('${movies[i].imdbId}')">
-    //                 <i class='bx bxs-heart'></i>
-    //             </button>
-    //         </div>
-    //         <span class="currient">${movies[i].year}  ${movies[i].language}</span>
-    //         <h3 class="card__title">${movies[i].title}</h3>
-    //         <div class="star__box d-flex">
-    //             <div>
-    //                 <button onclick ="addModal('${movies[i].imdbId}')" class="ModalBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">watch</button>
-    //             </div>
-    //             <div>
-    //                 <i class='bx bxs-star'></i>
-    //                 <span>${movies[i].imdbRating}</span> 
-    //             </div>
-    //         </div>
-    //         <div class="movie-category">${movies[i].categories}
-    //         </div>
-    //     `
-    //     elList.appendChild(li);
-    // }
+let totalPages = (Math.floor(movies.length/32));
 
 function element(totalPages, page) {
+
     let liTag = '';
     let beforePages = page - 1;
     let afterPages = page + 1;
@@ -96,62 +68,22 @@ function element(totalPages, page) {
     ulTag.innerHTML = liTag;
 }
 
-element(totalPages, 50);
+element(totalPages, 1);
 
 
-// let listBtn = document.querySelector('.numb');
+let listBtn = document.querySelector('.numb');
 
-// ulTag.addEventListener('click', (e) => {
-//     let a = e.target.textContent;
-//     for (let i = 0; i < MOVIES.length; i++) {
 
-//     }
-// })
-
+ulTag.addEventListener('click', (e) => {
+    let a = e.target.textContent;
+    paginationFor(a)
+})
 
 
 let nextBtn = document.querySelector('#nextBtn');
 
-nextBtn.addEventListener('click', () => {
-    filterMovi();
+nextBtn.addEventListener('click', (e) => {
+    page = page + 1
+    paginationFor(page)
 })
 
-let newFilterArr = []
-
-// function filterMovi() {
-//     newFilterArr = movies.filter((item, index) => {
-//         if (index >= 32 && index < 64) {
-//             return index;
-//         }
-//     });
-
-//     elList.innerHTML = '';
-
-//     for (let i = 0; i < newFilterArr.length; i++) {
-//         let li = document.createElement('li');
-//             li.style.position = 'relative';
-//             li.style.width = '300px';
-//             li.innerHTML = `
-//                 <img class = "movi-img" src="${movies[i].youtubePoster}" alt="movie">
-//                 <div class="addBtn">
-//                     <button class="heart__btn" onclick ="addHeart('${movies[i].imdbId}')">
-//                         <i class='bx bxs-heart'></i>
-//                     </button>
-//                 </div>
-//                 <span class="currient">${movies[i].year}  ${movies[i].language}</span>
-//                 <h3 class="card__title">${movies[i].title}</h3>
-//                 <div class="star__box d-flex">
-//                     <div>
-//                         <button onclick ="addModal('${movies[i].imdbId}')" class="ModalBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">watch</button>
-//                     </div>
-//                     <div>
-//                         <i class='bx bxs-star'></i>
-//                         <span>${movies[i].imdbRating}</span> 
-//                     </div>
-//                 </div>
-//                 <div class="movie-category">${movies[i].categories}
-//                 </div>
-//             `
-//             elList.appendChild(li);
-//     }
-// }
