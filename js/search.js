@@ -54,10 +54,6 @@ function addSearchForm(e) {
 
     }
 
-    elCategorySelect.value="All"
-     elSearchInput.value=""
-     yearStart.value=""
-     yearEnd.value=""
 }
     
 }

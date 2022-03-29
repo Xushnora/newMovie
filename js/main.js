@@ -62,7 +62,7 @@ addHeartBtn.forEach(addHeartBtn => addHeartBtn.addEventListener('click', (e) => 
 let newHeartArr = [];
 
 function addHeart (e) {
-    for (let i = 30; i <= 53; i++) {
+    for (let i = 0; i <= movies.length; i++) {
         if (movies[i].imdbId == e) {
             let b = movies[i];
             newHeartArr.push(b);
