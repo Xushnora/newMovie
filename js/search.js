@@ -108,16 +108,20 @@ for (let i = 0; i < newCategory.length; i++) {
 let headerSearch = document.querySelector('#headerSearch');
 let searchInput = document.querySelector('#headerSinput');
 let searchElementList = document.querySelector('#searchElementList');
-let modalBody = document.querySelector('.modal-body');
+let modalBody = document.querySelector('#modalBodyHeader');
 let btnSearch = document.querySelector('.search_btn');
 
 
 btnSearch.addEventListener('click', (e) => {
     e.preventDefault()
+
+    searchElementList.innerHTML = "";
+
     let searchHeader = searchInput.value;
 
     for(let i = 0; i < movies.length; i++){
         if( movies[i].title.toLowerCase().includes(searchHeader.toLowerCase()) ) {
+            
             let li = document.createElement('li');
             li.className = 'headerSearchItem';
             li.innerHTML = 
@@ -141,10 +145,11 @@ btnSearch.addEventListener('click', (e) => {
             </div>`
     
             searchElementList.appendChild(li);
-            modalBody.appendChild(searchElementList);
     
         }
+
     }
+
 })
 
 

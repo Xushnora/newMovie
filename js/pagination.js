@@ -11,9 +11,6 @@ function element(totalPages, page) {
     let afterPages = page + 1;
     let activeLi;
 
-    if(page > 1) {
-        liTag += `<li class="btp prev" onclick = "element(totalPages, ${page - 1})"><span><i class='bx bx-chevron-left'></i>Prev</span></li>`
-    }
     if(page > 2) {
         liTag += `<li class="numb" onclick = "element(totalPages, 1)"><span>1</span></li>`;
         if(page > 3) {
@@ -61,10 +58,6 @@ function element(totalPages, page) {
         liTag += `<li class="numb" onclick = "element(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
     }
 
-    if(page < totalPages) {
-        liTag += `<li class="btp next"  onclick = "element(totalPages, ${page + 1})"><span id = "nextBtn">Next<i class='bx bx-chevron-right' ></i></span></li>`
-    }
-
     ulTag.innerHTML = liTag;
 }
 
@@ -86,4 +79,3 @@ ulTag.addEventListener('click', (e) => {
 //     page = page + 1
 //     paginationFor(page)
 // })
-

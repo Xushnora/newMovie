@@ -1,11 +1,12 @@
 let elList = document.querySelector('#listCard');
 let elModalDesc = document.querySelector('.modalDesc');
-let elModalBody = document.querySelector('.modal-body');
+let elModalBody = document.querySelector('#modalBody');
 let elModalName = document.querySelector('.modal-header');
 let elWatchModal = document.querySelector('.offcanvas__list');
 let movieSliderList = document.querySelector('.movieSliderList');
 
-let page = 1;
+
+// slider 2
 
 for(let i = 0; i < 8; i++) {
     let li = document.createElement('li');
@@ -13,7 +14,7 @@ for(let i = 0; i < 8; i++) {
     li.innerHTML = `
         <img class = "movi-img" src="${movies[i].youtubePoster}" alt="movie">
         <div class="addBtn">
-            <button class="heart__btn" onclick ="addHeart('${movies[i].imdbId}')">
+            <button class="heart__btn">
                 <i class='bx bxs-heart'></i>
             </button>
         </div>
@@ -34,6 +35,8 @@ for(let i = 0; i < 8; i++) {
     movieSliderList.appendChild(li);
 }
 
+let page = 1;
+
 function render(movies) {
     elList.innerHTML = '';
 
@@ -45,7 +48,7 @@ function render(movies) {
         li.innerHTML = `
             <img class = "movi-img" src="${movies[i].youtubePoster}" alt="movie">
             <div class="addBtn">
-                <button class="heart__btn" onclick ="addHeart('${movies[i].imdbId}')">
+                <button class="heart__btn" onclick ="addHeart('${movies[i].imdbId}')" id="${movies[i].imdbId}" >
                     <i class='bx bxs-heart'></i>
                 </button>
             </div>
@@ -67,8 +70,6 @@ function render(movies) {
     }
 }
 
-let addHeartBtn = document.querySelectorAll('.heart__btn');
-
 
 render(movies)
 
@@ -81,70 +82,79 @@ function paginationFor(page) {
     render(arrpag)
 }
 
-addHeartBtn.forEach(addHeartBtn => addHeartBtn.addEventListener('click', (e) => {
-    e.target.style.color = 'red';
-}));
+// let addHeartBtn = document.querySelectorAll('.heart__btn');
+
+// addHeartBtn.forEach(addHeartBtn => addHeartBtn.addEventListener('click', (e) => {
+//     e.target.style.color = 'red';
+// }));
 
 
 let newHeartArr = [];
 
-function addHeart (id) {
+function addHeart(id) {
+    let testBtn = document.querySelector(`#${id}`);
+    testBtn.style.background = 'red';
+
+    console.log(id);    
+
     for (let i = 0; i <= movies.length; i++) {
-        if (movies[i].imdbId == id) {
-            let b = movies[i];
-            newHeartArr.push(b);
+        if(movies[i].imdbId == id) {
+            newHeartArr.push(movies[i])
+            
+            elWatchModal.innerHTML = '';
+            newHeartArr.forEach((item) => {
+                let li = document.createElement('li');
+                li.className = 'cards__item';
+                li.style.width = '270';
+                li.innerHTML = `
+                    <img src="${item.youtubePoster}" alt="movie" width="320" height="170">
+                    <div class="addBtn">
+                        <button class="heart__btn" id = "hearts">
+                            <i class='bx bxs-heart'></i>
+                        </button>
+                    </div>
+                    <h3 class="card__title">${item.title}</h3>
+                    <div class="star__box d-flex">
+                        <div>
+                            <i class='bx bxs-star'></i>
+                            <span>${item.imdbRating}</span> 
+                        </div>
+                        <div>
+                        <button class ="remove__btn" onclick = "removeFunc(e)">X</button>
+                        </div>
+                    </div>
+                    <div class="movie-category">${item.categories}
+                    </div>
+                ` 
+                elWatchModal.appendChild(li);
+
+            });
         }
     }
-
-    elWatchModal.innerHTML = '';
-    newHeartArr.forEach(item => {
-        let li = document.createElement('li');
-        li.className = 'cards__item';
-        li.style.width = '270';
-        li.innerHTML = `
-            <img src="${item.youtubePoster}" alt="movie" width="320" height="170">
-            <div class="addBtn">
-                <button class="heart__btn" id = "hearts">
-                    <i class='bx bxs-heart'></i>
-                </button>
-            </div>
-            <h3 class="card__title">${item.title}</h3>
-            <div class="star__box d-flex">
-                <div>
-                    <i class='bx bxs-star'></i>
-                    <span>${item.imdbRating}</span> 
-                </div>
-                <div>
-                <button class ="remove__btn">X</button>
-                </div>
-            </div>
-            <div class="movie-category">${item.categories}
-            </div>
-        ` 
-        elWatchModal.appendChild(li);
-
-    });
 }
 
-// let elRemoveBtn = document.querySelector('.remove__btn');
+function removeFunc (e) {
+    console.log(e.currentTarget);
+}
 
-elRemoveBtn.addEventListener('click', (e) => {
-    console.log(e.target);
-})
+// modal qo'shish
 
 function addModal(id) {
     for(let i = 0; i <= movies.length; i++) {
-        let a = movies[i];
+      
         if (movies[i].imdbId == id) {
-            elModalName.innerHTML = `<h5 class="modal-title" id="exampleModalLabel">${a.title}</h5>
+            console.log('ok');
+            elModalName.innerHTML = `
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
             elModalBody.innerHTML = `
             <div class="d-flex">
                 <div>
-                    <img class = "poster-img" src="${a.youtubePoster}" alt="poster">
+                    <img class = "poster-img" src="${movies[i].youtubePoster}" alt="poster">
                 </div>
-                <div class="modalDesc">${a.summary}</div>
+                <div class="modalDesc">
+                <h5 class="modal-title" id="exampleModalLabel">${movies[i].title}</h5>
+                ${movies[i].summary}</div>
             </div>`
         }
     }
-} 
+}
